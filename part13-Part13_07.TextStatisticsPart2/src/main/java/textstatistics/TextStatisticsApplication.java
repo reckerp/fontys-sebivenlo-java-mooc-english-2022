@@ -45,20 +45,21 @@ public class TextStatisticsApplication extends Application{
         layout.setBottom(bottom);
        
         Scene view = new Scene(layout);
+        window.setTitle("TextStatistics II");
         window.setScene(view);
         window.show();
     }
 
-    public static int countLetters(String text){
+    public int countLetters(String text){
         return (int) text.chars().count();
     }
     
-    public static int countWords(String text){
+    public int countWords(String text){
         String[] words = text.split(" ");
         return (int) Arrays.stream(words).count();
     }
     
-    public static String longestWord(String text){
+    public String longestWord(String text){
         String[] words = text.split(" ");
         return Arrays.stream(words)
                 .sorted((s1, s2) -> s2.length() - s1.length())
